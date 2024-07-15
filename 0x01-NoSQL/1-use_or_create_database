@@ -1,0 +1,2 @@
+// the command will create or use a my_db if already exist
+use my_db
