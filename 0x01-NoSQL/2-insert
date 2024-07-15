@@ -1,0 +1,3 @@
+// insert object to the school collection
+use my_db
+db.school.insertOne({"name": "Holberton school})
