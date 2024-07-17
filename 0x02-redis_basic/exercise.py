@@ -9,11 +9,12 @@ class Cache:
 
     def __init__(self):
         """ initialize the cache"""
-        self.__redis = redis.Redis()
-        self.__redis.flushdb()
+        self._redis = redis.Redis()
+        self._redis.flushdb()
+
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """store data in the cache"""
         random_key = str(uuid.uuid4())
-        self.__redis.set(random_key, data)
+        self._redis.set(random_key, data)
         return random_key
