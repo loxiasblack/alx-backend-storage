@@ -16,6 +16,7 @@ def count_calls(method: Callable) -> Callable:
         return method(self, *args, **kwargs)
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """ Decorator to store the history of inputs and
     outputs for a particular function.
@@ -33,6 +34,7 @@ def call_history(method: Callable) -> Callable:
         return data
 
     return wrapper
+
 
 def replay(method: Callable) -> None:
     # sourcery skip: use-fstring-for-concatenation, use-fstring-for-formatting
@@ -52,7 +54,6 @@ def replay(method: Callable) -> None:
     for i, o in zip(inputs, outputs):
         print("{}(*{}) -> {}".format(name, i.decode('utf-8'),
                                      o.decode('utf-8')))
-
 
 
 class Cache:
